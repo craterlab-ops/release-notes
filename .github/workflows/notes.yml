@@ -1,0 +1,14 @@
+name: Release notes
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  notes:
+    runs-on: actions-fabric-ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          echo "building release notes for $GITHUB_REPOSITORY"
+          ls -la
+          echo "notes ready"
